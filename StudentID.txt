@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace shubh_3
+{
+internal class Program
+{
+static void Main(string[] args)
+{
+Console.WriteLine("Enter the Student ID : ");
+string sid = Console.ReadLine();
+Console.WriteLine("Enter the Student Name : ");
+string sname = Console.ReadLine();
+Console.WriteLine("Enter the Student Course : ");
+string scourse = Console.ReadLine();
+Console.WriteLine("Enter the Student Date of Birth : ");
+string sbirthdate = Console.ReadLine();
+Console.WriteLine("----------------");
+Console.WriteLine("Student Details");
+Console.WriteLine("Student ID is : " + sid);
+Console.WriteLine("Student Name is : " + sname);
+Console.WriteLine("Student Course is : " + scourse);
+Console.WriteLine("Student date of birth is : " + sbirthdate);
+Console.ReadLine();
+} } }

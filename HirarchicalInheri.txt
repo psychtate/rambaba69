@@ -1,0 +1,36 @@
+c) Hierarchical Inheritance: Source code:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace hierchiel
+{
+internal class Program
+{
+static void Main(string[] args)
+{
+Android.Mobile();
+Apple.mobile();
+Apple.Mobile();
+Samsung.Mobile();
+Console.ReadLine();
+}
+class Android
+{
+public static void Mobile()
+{
+Console.WriteLine("This is Android");
+} }
+class Apple : Android
+{
+public static void mobile()
+{
+Console.WriteLine("This is Apple");
+} }
+class Samsung : Android
+{
+public static void Mobile()
+{
+Console.WriteLine("This is samsung");
+} } } }

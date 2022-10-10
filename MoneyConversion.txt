@@ -1,0 +1,32 @@
+ii) Money Conversion Source Code:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Practical2aii_02
+{
+internal class Program
+{
+static void Main(string[] args)
+{
+int c;
+double rupee, dollar, euro;
+Console.WriteLine("Enter the Amount to Convert: ");
+rupee = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Please select the conversion: ");
+Console.WriteLine("1. Dollar 2. Euro ");
+c = Convert.ToInt32(Console.ReadLine());
+switch (c)
+{
+case 1:
+dollar = rupee * 0.013;
+Console.WriteLine("The Amount in Dollar is: " + dollar);
+break;
+case 2:
+euro = rupee * 0.012;
+Console.WriteLine("The Amount in euro is: " + euro);
+break;
+}
+Console.ReadLine();
+} } }
