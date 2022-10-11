@@ -1,0 +1,25 @@
+sudo pip3 install mfrc522
+
+write.py
+import RPi.GPIO as GPIO
+from mfrc522 import simple MFRC522
+reader = SimpleMFRC522()
+try:
+	text=input('New data:')
+	print("now place your tag to write")
+	reader:write(text)
+	print("written")
+finally:
+	GPIO.cleanup()
+
+read.py
+
+import RPi.GPIO as GPIO
+from mfrc522 import simple MFRC522
+reader = SimpleMFRC522()
+try:
+	id,text = reader.read()
+	print(id)
+	print(text)
+Finally:
+	GPIO.cleanup()
