@@ -1,0 +1,74 @@
+﻿Practical No.03
+
+1]create database, collection and document.
+use school
+db.student.insert([
+{"RollNo":101,"Name":"abc","Gender":"Male","Age":20,"class":"TYIT"},
+{"RollNo":102,"Name":"def","Gender":"female","Age":25,"class":"TYIT"},
+{"RollNo":103,"Name":"ghi","Gender":"Male","Age":22,"class":"TYIT"},
+{"RollNo":104,"Name":"jkl","Gender":"female","Age":23,"class":"TYIT"},
+{"RollNo":105,"Name":"mno","Gender":"Male","Age":24,"class":"TYIT"},
+{"RollNo":106,"Name":"pqr","Gender":"female","Age":25,"class":"TYIT"},
+])
+db.student.find()
+
+
+A]Write a MongoDB query to use sum, avg, min and max expression. 
+
+ 1]sum-
+Query:
+db.student.aggregate([{$group: { _id: "$Gender",Myresult:{$sum:1}}}])
+
+Output:
+
+2]avg-
+Query:
+db.student.aggregate([{$group: { _id: "$Gender",AvgAge:{$avg: "$Age"}}}])
+
+Output:
+
+3]min-
+Query:
+db.student.aggregate([{$group: { _id: "$Gender",MinAge:{$min: "$Age"}}}])
+
+Output:
+
+
+
+4]max-
+Query:
+db.student.aggregate([{$group: { _id: "$Gender",MaxAge:{$max: "$Age"}}}])
+
+Output:
+
+
+
+B] Write a MongoDB query to use push and addToSet expression.
+1]push:
+Query:
+db.student.aggregate([{$group: { _id: "$Gender",Name:{$push:"$Name"}}}])
+
+Output:
+
+
+2]addToSet:
+Query:
+db.student.aggregate([{$group: { _id: "$Gender",AddToSet:{$addToSet:"$Name"}}}])
+
+Output:
+
+
+C] Write a MongoDB query to use first and last expression.
+1]first:
+Query:
+db.student.aggregate([{$group: { _id: "$Gender",First:{$first:"$Name"}}}])
+
+Output:
+
+
+2]last:
+Query: 
+db.student.aggregate([{$group: { _id: "$Gender",last:{$last:"$Name"}}}])
+
+Output:
+

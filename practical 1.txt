@@ -1,0 +1,40 @@
+﻿Roll No:56
+Practical No.01
+· MongoDB Basics
+
+A) Write a MongoDB query to create and drop database.
+Query and Output:
+1) use school
+
+2) show dbs
+
+
+
+3) db.student.insert([{"Name":"abc","RollNo":101},{"Name":"abc","RollNo":102},{"Name":	"abc", "RollNo":103}])
+
+
+
+4) db.dropDatabase()
+
+B) Write a MongoDB query to create, display and drop collection.
+     Query and Output:
+1) db.createCollection("student")
+2) show collections
+3) db.student.drop()
+    
+C) Write a MongoDB query to insert, query, update and delete a document.
+     Query and Output:
+1) db.student.insert([{"Name":"abc","RollNo":101},{"Name":"abc","RollNo":102},{"Name":	"abc","RollNo":103}])
+
+2) db.student.find()
+
+
+3) db.student.update({"Name":"pqr"},{$set:{"Name":"sk"}})
+
+
+
+
+
+4) db.student.remove({"Name":"sk"})
+
+

@@ -1,0 +1,220 @@
+﻿Practical No.08
+
+A] jQuery Basic, jQuery Events
+1] Mouse Event:
+Code:
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.js">
+</script>
+</head>
+<body>
+<script>
+
+//click
+$(document).ready(function(){
+  	$("#c1").click(function(){
+   	$(this).hide();
+  	});
+});
+
+//double-click
+$(document).ready(function(){
+  	$("#d1").dblclick(function(){
+    	$(this).hide();
+  	});
+});
+
+//Entered mouse
+$(document).ready(function(){
+  	$("#m1").mouseenter(function(){
+    	alert("You entered!");
+  	});
+});
+
+//Leave mouse
+$(document).ready(function(){
+ 	$("#m2").mouseleave(function(){
+    	alert("Bye! You now leave!");
+  	});
+});
+
+</script>
+<p id=c1>click here to hide.</p>
+<p id=d1>double click to hide</p>
+<p id=m1>enter mouse</p>
+<p id="m2">leave mouse</p>
+</body>
+</html>
+
+
+
+
+Output:
+
+
+Click:                                                                
+ 
+
+ Double Click:
+
+
+Mouse enter:
+
+
+
+
+Mouse leave:
+
+
+2] Form Event:
+Code:
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.js">
+</script>
+
+<script>
+$(document).ready(function(){
+  	$("input").focus(function(){
+    	$(this).css("background-color", "pink");
+  	});
+  
+$("input").blur(function(){
+    	$(this).css("background-color", "blue");
+  	});
+});
+</script>
+</head>
+<body>
+Email:<input type="text" name="Email"><br><br>
+Password:<input type="text" name="Password">
+</body>
+</html>
+
+Output: 
+
+
+
+
+
+
+B] jQuery Selectors, jQuery Hide and Show effects
+Code:
+<!DOCTYPE html>
+<html>
+<body>
+	<script src="jquery.js">
+	</script>
+	
+<script>
+		$(document).ready(function()
+		{
+		$("#bt1").click(function()
+		{
+		$("h1").hide();
+		});
+			
+		$("#bt2").click(function()
+		{
+		$("h1").show();
+		$("h1").css("background-color","pink");
+		});
+		})
+	</script>
+<h1>JAI PUBG</h1>
+<button id="bt1">Hide me</button>
+<button id="bt2">Show me</button>
+</body>
+</html>
+
+Output:
+
+
+
+1] Click on Hide me button:                             
+
+   
+
+ 
+
+
+
+2]Click on Shoe me button:
+
+  
+
+C] jQuery fading effects, jQuery Sliding effects.
+
+Code:
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example of jQuery Fade-In and Fade-Out Effects</title>
+<script src="jquery.js"></script>
+<style type="text/css">
+    h1{
+        padding: 15px;
+        background: #b5c3c5;
+    }
+	h2{
+        padding: 15px;
+        background: #b5c3c5;
+    }
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+   // Fadeing out displayed paragraphs
+    $(".out-btn").click(function(){
+        $("h1").fadeOut();
+    });
+    
+    // Fading in hidden paragraphs
+    $(".in-btn").click(function(){
+        $("h1").fadeIn();
+    });
+	
+	// Slide up displayed paragraphs
+	$(".up-btn").click(function(){
+        $("h2").slideUp();
+    });
+    
+    // Slide down hidden paragraphs
+    $(".down-btn").click(function(){
+        $("h2").slideDown();
+    });
+});
+</script>
+</head>
+<body>
+   <button type="button" class="out-btn">Fade Out</button>
+    <button type="button" class="in-btn">Fade In</button>
+	<button type="button" class="up-btn">Slide Up</button> 
+    <button type="button" class="down-btn">Slide Down</button>
+    <h1>Information Technology</h1>
+    <h2>Next Generation Technology.</h2>
+</body>
+</html>
+
+Output:  
+
+        
+
+
+1] Fade Out:
+
+
+
+2] Fade In:
+
+
+
+3] Slide Up:
+
+
+
+4] Slide Down:
+

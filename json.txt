@@ -1,0 +1,30 @@
+﻿Practical No.10
+
+A] Creating JSON
+B] Parsing JSON
+C] Persisting JSON
+Code:
+<!DOCTYPE html>
+<html>
+<body>
+<script >
+console.log("Creating Object")
+var details=' {"employ":{"id":14,"name":"abc","age":20}}' //create json object
+console.log(details)
+console.log("Converting json object into javascript object")
+var obj=JSON.parse(details) //convert json object into javascript object
+console.log(obj)
+console.log("persisting using json")
+localStorage.setItem('myStorage',JSON.stringify(obj)); //persisting using json
+var x=localStorage.getItem('myStorage')
+console.log(x)
+console.log("convert javascript object into json object")
+var obj1=JSON.stringify(obj) //convert javascript object into json object
+console.log(obj1)
+</script>
+</body>
+</html>
+
+
+Output:
+

@@ -1,0 +1,58 @@
+﻿Practical No.02
+Q.A) Simple Queries with MongoDB
+
+Queries and its Outputs given below:
+
+1)Projection
+
+db.student.find({},{"Name":1,"_id":0})
+
+
+
+2)Limit()
+
+db.student.find().limit(4)
+
+
+
+3)Skip()
+
+db.student.find().skip(5)
+
+
+
+4)Sort()
+db.student.find().sort({"Name":1})
+
+
+
+
+5)Find all
+
+db.student.find()
+
+
+
+6)Find with AND
+
+db.student.find({"Age":22,"RollNo":103})
+
+
+
+7)Find with OR
+
+db.student.find({$or: [{"Age":22},{"RollNo":103}]})
+
+
+
+8)Find Greater than
+
+db.student.find({"Age":{$gt:25}})
+
+
+
+
+9)Find Less than equal to
+
+db.student.find({"Age":{$lte:23}}
+

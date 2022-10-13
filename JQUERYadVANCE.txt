@@ -1,0 +1,181 @@
+﻿
+Practical No.09
+A] jQuery Animation effects, jQuery Chaining
+Code:
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Example of jQuery Method Chaining</title>
+<script src="jquery.js"></script>
+<style type="text/css">
+p {
+    width: 200px;
+	padding: 40px 0;
+	font: bold 24px sans-serif;
+	text-align: center;
+    background: #FFC0CB;
+    border: 1px solid #87CEFA;
+    box-sizing: border-box;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    $(".start").click(function(){
+        $("p")
+            .animate({width: "100%"})
+            .animate({fontSize: "46px"})
+            .animate({borderWidth: 30});
+    });
+    $(".reset").click(function(){
+        $("p").removeAttr("style");
+    });
+});  
+</script>
+</head>
+<body>
+    <p>WELCOME</p>
+    <button type="button" class="start">Start Chaining</button>
+    <button type="button" class="reset">Reset</button>
+</body>
+</html>
+
+Output:
+
+
+
+
+
+
+Click on Start Chaining:
+
+
+
+
+
+B] jQuery Callback, jQuery Get and Set Contents
+
+Code:
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+				  $("#b2").click(function(){
+   					 alert("Text: " + $("#test").text());
+ 					 });
+
+				  $("#b3").click(function(){
+   					 alert("html: " + $("#test1").html());
+ 					 });
+
+				  $("#b4").click(function(){
+   					 alert("value: " + $("#t1").val());
+ 					 });
+
+				   $("#b5").click(function(){
+   					 alert("attribute: " + $("#t2").attr("id"));
+ 					 });
+				
+			});
+	</script>
+
+	<p id="test">NEXT GENERATION TECHNOLOGY: <b>Hello jQuery 	Advanced</b></p>
+	<p id="test1">NEXT GENERATION TECHNOLOGY: <b>Bye jQuery 	Advanced</b></p>
+Enter value:<input type="text" id="t1">
+Enter Attribute:<input type="text" id="t2">
+<br><br>
+<button id="b2">text</button>
+<button id="b3">html</button>
+<button id="b4">value</button>
+<button id="b5">attribute</button>
+</body>
+</html>
+
+
+
+
+
+Output:
+
+
+
+
+Click on text button: 
+
+        
+ 
+Click on html button:
+ 	 
+
+
+Click on value button:                                     
+
+ 
+
+
+Click on Attribute button:
+
+
+
+
+C] jQuery Insert Content, jQuery Remove Elements and Attribute
+
+Code:
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+             $("#b1").click(function(){
+             	$("ul").append("<b>NGT</b>")
+             })/li
+             $("#b2").click(function(){
+             	$("ul").remove()
+             	alert("Remove successfully!!")
+             })
+             $("#b3").click(function(){
+             	$("ul").prepend("<b>SEM-5!!</b>")
+                 })
+         });
+    </script>
+	<ul>
+	<li>AI</li>
+	<li>IOT</li>
+	<li>AWP</li>
+	<li>SPM</li>
+	</ul>
+	<button id="b1">append</button>
+
+
+	<button id="b2">Remove</button>
+	<button id="b3">prepend</button>
+</body>
+</html>
+
+
+Output:
+
+
+
+Append:                                                        
+ 
+
+Prepend:
+
+  
+
+Remove:
+
+   
+
+

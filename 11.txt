@@ -1,0 +1,37 @@
+﻿Practical No.11
+Create a JSON file and import it to MongoDB
+A] Import:
+1] Start mongodb
+2] Start mongo
+3] Create stud.json file
+
+
+4] Open command prompt run as administrator and write following command
+C:\Users\shree>mongoimport --db college --collection student --type json --file D:\Tyit\NGT\stud.json     
+
+     5] Open mongo command prompt and check data is inserted or not.
+     
+
+
+
+    B] Export:
+    1] Start mongodb
+2] Start mongo
+3] Open command prompt run as administrator and write following command
+C:\Users\shree>mongoexport --db college --collection student --type json --out D:\Tyit\NGT\stud.json 
+
+
+
+Q.B] Write a MongoDB query to delete JSON object from MongoDB
+
+
+
+
+
+
+
+
+
+     
+
+

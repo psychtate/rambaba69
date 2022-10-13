@@ -1,0 +1,107 @@
+﻿ Roll No.13
+
+Practical No.07
+
+Python and MongoDB
+Q.1]Connecting Python with MongoDB and inserting, retrieving, updating and
+deleting.
+
+Inserting data:
+    1] insertOne():
+import pymongo
+db=pymongo.MongoClient("mongodb://localhost:27017")
+studdb=db.sk
+studcol=studdb.student
+myd={"Roll No":1,"Name":"abc","Age":20} 
+studcol.insert_one(myd)
+print("Inserted One...")
+	
+	  
+
+2] inserted many():
+import pymongo
+db=pymongo.MongoClient("mongodb://localhost:27017")
+studdb=db.sk
+studcol=studdb.student
+myd=[{"Roll No":2,"Name":"def","Age":21},
+     {"Roll No":3,"Name":"ghi","Age":22},
+     {"Roll No":4,"Name":"jkl","Age":23},
+     {"Roll No":5,"Name":"mno","Age":24]
+studcol.insert_many(myd)
+print("Inserted Many...")
+
+ 
+
+Retrieving data:
+
+1] FindOne():
+import pymongo
+db=pymongo.MongoClient("mongodb://localhost:27017")
+studdb=db.sk
+studcol=studdb.student
+c=studcol.find_one()
+print(c)
+
+
+
+
+2] Find many():
+
+import pymongo
+db=pymongo.MongoClient("mongodb://localhost:27017")
+studdb=db.sk
+studcol=studdb.student
+c=studcol.find()
+for i in c:
+    print(i)
+
+
+
+Update data:
+
+1] update one():
+
+import pymongo
+db=pymongo.MongoClient("mongodb://localhost:27017")
+studdb=db.sk
+studcol=studdb.student
+studcol.update_one({"name":"abc"},{"$set":{"name":"xyz"}})
+print("Updated...")
+
+ 
+
+2 ] updated many():
+import pymongo
+db=pymongo.MongoClient("mongodb://localhost:27017")
+studdb=db.sk
+studcol=studdb.student
+studcol.update_many({},{"$set":{"name":"PUBG"}})
+print("Updated Many...")
+
+ 
+
+Delete data:
+
+1] Delete one():
+
+import pymongo
+db=pymongo.MongoClient("mongodb://localhost:27017")
+studdb=db.sk
+studcol=studdb.student
+studcol.delete_one({"Roll No":"1"})
+print("Deleted One...")
+
+   
+
+
+
+2] Delete many():
+import pymongo
+db=pymongo.MongoClient("mongodb://localhost:27017")
+studdb=db.sk
+studcol=studdb.student
+studcol.remove({})
+print("Deleted...")
+
+  
+

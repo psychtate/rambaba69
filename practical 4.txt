@@ -1,0 +1,141 @@
+﻿Practical No.04
+Q.A]Write a MongoDB query to create Replica of existing database.
+1] Commands to start mongod at different ports:
+C:\>start mongod --storageEngine mmapv1 --replSet srm --dbpath \data\rs1 --logpath \data\rs1\1.log --	port 37017 --smallfiles --oplogSize 64
+
+C:\>start mongod --storageEngine mmapv1 --replSet srm --dbpath \data\rs2 --logpath \data\rs2\2.log --	port 37018 --smallfiles --oplogSize 64
+
+C:\>start mongod --storageEngine mmapv1 --replSet srm --dbpath \data\rs3 --logpath \data\rs3\3.log --	port 37019 --smallfiles --oplogSize 64
+
+Output:
+
+2] mongo instance at port 37017:
+C:\Windows\system32>mongo --port 37017
+
+Output:
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3] Config:
+
+config={"_id":'srm',members:[{"_id":0,"host":"localhost:37017"},{"_id":1,"host":"localhost:37018"},	{"_id":2,"host":"localhost:37019"}]}
+
+Output:
+
+
+
+rs.initiate(config)
+
+
+Output:
+
+
+rs.status()
+
+Output:
+
+
+
+
+
+4] Perform Write and read Operation on Primary node 37017
+
+use sk
+
+db.stud.insert({"RollNo":101,"Name":"ABC"})
+
+db.stud.find()
+
+
+
+Output:
+
+
+
+
+
+
+
+5] mongo use port 37018:
+
+C:\Windows\system32>mongo --port 37018
+
+Output:
+
+
+
+6] Secondary node can perform only read:
+
+rs.slaveOk()
+
+use sk
+
+db.stud.find()
+
+Output:
+
+
+
+The data is inserted  only primary node not in secondary node  
+
+
+
+7] Shift to primary node(37017) and shutdown server:
+use admin
+db.shutdownServer()
+Output:
+
+
+
+
+8] Shift to port 37018 and check status:
+rs.status()
+Output:
+
+
+
+
+
+
+Q.B] Write a MongoDB query to create a backup of existing database.
+D:\mongo>mongodump
+Output:
+
+
+
+
+
+
+
+
+
+
+
+Q.C] Write a MongoDB query to restore database from the backup.
+
+D:\mongo>mongorestore --db sk dump/sk
+
+Output:
+
+
+
+
